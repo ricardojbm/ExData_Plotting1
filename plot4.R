@@ -5,14 +5,14 @@
 # it to nrows = integer.
 
 data <- read.table("./data/household_power_consumption.txt", na.strings = "?", 
-					sep = ";", skip = 66637, nrows = 2880, stringsAsFactors = FALSE)
+			sep = ";", skip = 66637, nrows = 2880, stringsAsFactors = FALSE)
 
 # Extracting column names from file to name variables. The latter since the
 # arguments skip and nrows return unnamed variables when extracting data
 # that skips the header.
 
 datacolumn <- read.table("./data/household_power_consumption.txt", sep = ";", 
-					nrows = 1, header = FALSE, stringsAsFactors = FALSE)
+			nrows = 1, header = FALSE, stringsAsFactors = FALSE)
 					
 colnames(data) <- datacolumn
 
@@ -32,7 +32,7 @@ plot(dateandtime, data$Sub_metering_1, type = "l", xlab = " ", ylab = "Energy su
 lines(dateandtime, data$Sub_metering_2, type = "l", col = "red")
 lines(dateandtime, data$Sub_metering_3, type = "l", col = "blue")
 legend("topright", legend = c("sub_metering_1", "sub_metering_2", "sub_metering_3"), 
-					col = c("black", "red", "blue"), lty = 1, bty = "n")
+			col = c("black", "red", "blue"), lty = 1, bty = "n")
 					
 plot(dateandtime, data$Voltage, xlab = "datetime", ylab = "Voltage", type = "l")
 
